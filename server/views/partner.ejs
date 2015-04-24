@@ -1,0 +1,16 @@
+<div class="container user col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+
+  <h1><%= partner.name %></h1>
+
+  <h2>Rewards:</h2>
+
+  <div>
+    <% _.each(partner.rewards, function(reward) { %>
+      <span class="reward-item"><%= reward.name %><span>
+    <% }); %>
+  </div>
+
+  <% if (req.session.authenticated) { %>
+    <a href="/add-reward">Add a Reward</a>
+  <% } %>
+</div>

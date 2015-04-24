@@ -1,0 +1,25 @@
+<div class="container thanks col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+
+  <h1>Thank you...</h1>
+
+  <label>Upload a portrait photo of the person that you are thankfull</label><br>
+  <form id="uploadForm"
+    enctype="multipart/form-data"
+    action="/thanks"
+    method="POST">
+    <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
+    <label>Why are you grateful?*</label><br>
+    <select name="category" class="form-control">
+      <option>Helped me learn something new</option>
+      <option>Helped me achive something</option>
+      <option>Made my day better</option>
+      <option>Gave me an advice</option>
+    </select>
+
+    <label>In more details (optional): </label><br>
+    <input name="description" type="text" class="form-control" placeholder="More details... (optional)"></input>
+    <hr>
+    <div class="form-controll bg-success"><%- req.flash('success') %></div>
+    <input type="submit" class="btn btn-success" value="Thank you!"></input>
+  </form>
+</div>
