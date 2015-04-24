@@ -34,7 +34,29 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  '/thanks': 'ActionController.thanks',
+  // --
+  'get /login': { view: 'auth/login'},
+  'post /login': 'AuthController.login',
+
+  'get /register': { view: 'auth/register' },
+  'post /register': 'AuthController.register',
+
+  'get /partner-login': { view: 'partner-login' },
+  'post /partner-login': 'AuthController.partnerLogin',
+
+  'get /apply': { view: 'apply' },
+  'post /apply': 'PartnerController.apply',
+
+  'get /logout': 'AuthController.logout',
+  // --
+  'get /user/:userId': 'UserController.view',
+  'get /partner/:partnerId': 'PartnerController.view',
+  // --
+  'get /add-reward': { view: 'add-reward' },
+  'get /reward/:rewardId': 'RewardController.view',
+  'post /reward': 'RewardController.create',
 
   /***************************************************************************
   *                                                                          *
