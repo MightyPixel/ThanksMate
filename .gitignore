@@ -1,3 +1,10 @@
+# User Files
+*.swp
+
+# Project specific
+pre/
+upload/
+
 # Compiled Object files
 *.slo
 *.lo

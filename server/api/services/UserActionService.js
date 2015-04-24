@@ -1,6 +1,6 @@
 var opencv = require('opencv');
 
-var dirname = '../../assets/images';
+var dirname = '../../assets/images/upload';
 
 function registerAction(action, recipient) {
   return new Promise(function(resolve) {
