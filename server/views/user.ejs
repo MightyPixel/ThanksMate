@@ -1,7 +1,112 @@
-<div class="container user col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+  <div class="container user col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+    <div class="profile-card">
+        <div class="profile-card-background"></div>
+        <div class="profile-card-content">
+            <a class="profile-card-avatar-link">
+                <img class="profile-card-avatar-image" src="/images/default-profile-picture.png"/>
+            </a>
 
-  <h1>Name</h1>
+            <div class="profile-card-user-fields">
+                <div class="profile-card-name"><a href="#">Ivan Nakov</a></div>
+                <span class="profile-card-username">
+                    <a href="#">@<span class="profile-card-username-link"><%= user.username %></span></a>
+                </span>
+            </div>
+            <div class="profile-card-user-status">
+                <ul class="profile-card-user-status">
+                    <li>
+                        <a class="profile-card-status-link" href="#">
+                            <span class="profile-card-status-label">Karma</span>
+                            <span class="profile-card-status-value">50</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="profile-card-status-link" href="#">
+                            <span class="profile-card-status-label">Thanks</span>
+                            <span class="profile-card-status-value">100</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="profile-card-status-link" href="#">
+                            <span class="profile-card-status-label">Grateful</span>
+                            <span class="profile-card-status-value">150</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="profile-actions">
+      <div class="profile-actions-background">
+        <div class="actions-header-left">Thanks</div>
+        <div class="actions-header-right">Grateful</div>
+      </div>
+      <div class="profile-actions-content row">
+        <div class="profile-actions-container-left col-md-6">
+          <div class="actions">
+            <ol>
+              <li>
+                <div class="action">
+                  <div class="action-content">
+                    <div class="action-header">
+                      <a class="action-account-group">
+                        <img class="action-account-avatar" src="/images/default-profile-picture.png"/>
+                        <strong class="full-name">Ivan Nakov</strong>
+                        <span class="username">@<%= user.username %></span>
+                      </a>
+                      <small class="time">
+                        <span>20m ago.</span>
+                      </small>
+                      <p class="action-text">Help me with my homework!</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="action">
+                  <div class="action-content">
+                    <div class="action-header">
+                      <a class="action-account-group">
+                        <img class="action-account-avatar" src="/images/default-profile-picture.png"/>
+                        <strong class="full-name">Ivan Nakov</strong>
+                        <span class="username">@<%= user.username %></span>
+                      </a>
+                      <small class="time">
+                        <span>20m ago.</span>
+                      </small>
+                      <p class="action-text">Help me with my homework!</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="profile-actions-container-right col-md-6">
+          <div class="actions">
+            <ol>
+              <li>
+                <div class="action">
+                  <div class="action-content">
+                    <div class="action-header">
+                      <a class="action-account-group">
+                        <img class="action-account-avatar" src="/images/default-profile-picture.png"/>
+                        <strong class="full-name">Ivan Nakov</strong>
+                        <span class="username">@<%= user.username %></span>
+                      </a>
+                      <small class="time">
+                        <span>20m ago.</span>
+                      </small>
+                      <p class="action-text">Help me with my homework!</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <%= user.username %>
 
-</div>
+  </div>

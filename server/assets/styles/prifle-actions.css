@@ -1,0 +1,151 @@
+.container-left{
+  float: left;
+  width: 290px;
+  display: block;
+}
+
+.profile-actions-container-left{
+  position: relative;
+  margin-left: 0;
+  list-style: none;
+  border-radius: 5px;
+  width: 46%;
+  /*float: left;*/
+  /*display: block;*/
+}
+.profile-actions-container-right{
+  position: relative;
+  list-style: none;
+  border-radius: 5px;
+  width: 46%;
+  /*float: right;*/
+  /*display: inline;*/
+}
+
+.actions{
+  position: relative;
+  margin-left: 0;
+  list-style: none;
+}
+
+.actions ol{
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.actions ol li{
+  line-height: inherit;
+  background: #fff;
+  background-clip: padding-box;
+  display: list-item;
+}
+
+.action {
+  border-bottom: 1px solid #e1e8ed;
+  position: relative;
+  min-height: 80px;
+  padding: 9px 12px;
+  display: block;
+}
+
+#action-content{
+  resize: none;
+}
+.action-header .action-account-group{
+  color: #8899a6;
+  text-decoration: none;
+  background: transparent;
+}
+
+.action-account-avatar{
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.full-name{
+  font-weight: bold;
+  color: #292f33;
+}
+
+.username{
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.action .username{
+  font-size: 13px;
+  color: #8899a6;
+}
+
+.action .full-name:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.action .time{
+  color: #8899a6;
+  font-size: 13px;
+}
+
+.action .time:before {
+  content: "\00b7";
+}
+
+.action .action-text{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/*.tweet:hover{*/
+  /*background-color: #f5f8fa;*/
+/*}*/
+
+.actions{
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+
+.profile-actions .profile-actions-background{
+  background-color: #48A5FF !important;
+  background-size: 100%;
+  border-bottom: 1px solid #e1e8ed;
+  height: 50px;
+  border-radius: 4px 4px 0 0;
+  background-position: 0 50%;
+  padding: 20px 1px;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.profile-actions{
+  border: 1px solid #e1e8ed;
+  background: #FFF;
+  border-radius: 6px;
+  line-height: 16px;
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.profile-actions .actions-header-right {
+  float: right;
+  color: white;
+  font-size: x-large;
+  margin-right: 10px;
+}
+.profile-actions .actions-header-left {
+  float: left;
+  color: white;
+  font-size: x-large;
+  margin-left: 10px;
+}
+
