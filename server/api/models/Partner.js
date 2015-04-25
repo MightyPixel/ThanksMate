@@ -8,7 +8,10 @@
 module.exports = {
 
   attributes: {
-    name : {
+    name: {
+      type: 'string'
+    },
+    photo: {
       type: 'string'
     },
     description: {
@@ -17,13 +20,12 @@ module.exports = {
     website: {
       type: 'string'
     },
-    contact : {
+    contact: {
       type: 'email'
     },
     rewards:{
       collection: 'reward', via: 'provider'
     }
-
   }
 };
 

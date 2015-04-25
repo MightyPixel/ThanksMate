@@ -14,16 +14,20 @@ function view(req, res) {
 };
 
 function create(req, res) {
-  sails.log('partnerID');
-  sails.log(req.session.partnerId);
-  var rewardObj = {
-    name: req.param('name'),
-    description: req.param('description'),
-    provider: req.session.partnerId,
-  };
+  UtilService.uploadFile(req.file('uploadFile')).then(function(file) {
+    var fd = file.fd.split('/');
+    var filename = fd[fd.length - 1];
 
-  Reward.create(rewardObj).then(function(reward) {
-    return res.redirect('/reward/' + reward.id);
+    var rewardObj = {
+      name: req.param('name'),
+      description: req.param('description'),
+      photo: filename,
+      provider: req.session.partnerId,
+    };
+
+    Reward.create(rewardObj).then(function(reward) {
+      return res.redirect('/reward/' + reward.id);
+    });
   });
 };
 

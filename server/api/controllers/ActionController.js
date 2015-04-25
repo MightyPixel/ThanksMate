@@ -16,8 +16,6 @@ function thanks(req, res) {
   var category = req.param('category');
   var description = req.param('description');
 
-  sails.log(uploadFile, description, category);
-
   User.findOne({ username: req.session.username }).then(function(user) {
     var action = {
       file: uploadFile,

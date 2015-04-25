@@ -1,0 +1,13 @@
+<div class="grid">
+  <h2 class="head-line"><%= header %></h2>
+  <% _.each(items, function(item) { %>
+    <ul class="img-list">
+      <li style="margin: 0px; margin-bottom: 5px;">
+      <a href="/<%= section %>/<%= item.id %>">
+        <img src="/images/<%= item.photo && ('upload/' + item.photo) || 'thumb-default.png' %>" width="150" height="150" />
+        <span class="text-content"><span><%= item.name %></span></span>
+      </a>
+      </li>
+    </ul>
+  <% }); %>
+</div>

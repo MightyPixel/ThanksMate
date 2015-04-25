@@ -2,13 +2,18 @@
 
   <h1>Add a Reward</h1>
 
-  <form action="/reward" method="post">
+  <form action="/reward"
+    id="uploadForm"
+    enctype="multipart/form-data"
+    method="post">
+
     <label>Name</label><br>
     <input type="text" name="name" class="form-control" placeholder="name"></input>
     <label>Description</label><br>
     <input type="text" name="description" class="form-control" placeholder="description"></input>
 
-
+    <label>Image</label><br>
+    <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
 
     <hr>
     <input type="submit" class="btn btn-success" value="Register"></input>

@@ -5,6 +5,8 @@
   </div>
 
   <h1><%= reward.name %></h1>
+
+  <img src="/images/<%= reward.photo && ('upload/' + reward.photo) || 'thumb-default.png' %>" width="150" height="150" />
   <p><%= reward.description %></p>
 
 </div>

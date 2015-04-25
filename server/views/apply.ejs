@@ -2,13 +2,19 @@
 
   <h1>Apply</h1>
 
-  <form action="/apply" method="post">
+  <form action="/apply"
+    id="uploadForm"
+    enctype="multipart/form-data"
+    method="post">
+
     <label>Name</label><br>
     <input type="text" name="name" class="form-control" placeholder="Name"></input>
     <label>Contact Email</label><br>
     <input type="email" name="email" class="form-control" placeholder="your@email.com"></input>
     <label>Password</label><br>
     <input type="password" name="password" class="form-control" placeholder="password"></input>
+    <label>Image</label><br>
+    <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
 
     <hr>
     <input type="submit" class="btn btn-success" value="Register"></input>

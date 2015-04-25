@@ -1,16 +1,14 @@
 <div class="container user col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
 
   <h1><%= partner.name %></h1>
-
-  <h2>Rewards:</h2>
+  <img src="/images/<%= partner.photo && ('upload/' + partner.photo) || 'thumb-default.png' %>" width="150" height="150" />
 
   <div>
-    <% _.each(partner.rewards, function(reward) { %>
-      <span class="reward-item"><a href="/reward/<%= reward.id %>"><%= reward.name %></a><span>
-    <% }); %>
-  </div>
-
-  <% if (req.session.authenticated) { %>
+    <% if (req.session.authenticated) { %>
     <a href="/add-reward">Add a Reward</a>
-  <% } %>
+    <% } %>
+    <div class="row text-center">
+      <%- partial ('partials/grid.ejs', { items: partner.rewards, header: 'Rewards', section: 'reward' }) %>
+    </div>
+  </div>
 </div>

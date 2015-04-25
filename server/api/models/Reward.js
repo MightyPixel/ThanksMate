@@ -12,6 +12,9 @@ module.exports = {
     name: {
       type: 'string'
     },
+    photo: {
+      type: 'string'
+    },
     description: {
       type: 'text'
     },
