@@ -1,7 +1,5 @@
 var opencv = require('opencv');
 
-var dirname = '../../assets/images/upload';
-
 function registerAction(action, recipient) {
   return new Promise(function(resolve) {
     UtilService.uploadFile(action.file).then(function(file) {
@@ -20,7 +18,7 @@ function registerAction(action, recipient) {
           img.save(preprocImg);
 
           identifyUser(preprocImg).then(function(actor) {
-            Action.create({ photo: preprocImg.fd, agent: action.id, description: action.description, tags: extractTags(action.description)}).then(function(action) {
+            Action.create({ photo: preprocImg.fd, agent: actor.id, description: action.description, tags: extractTags(action.description)}).then(function(action) {
               return resolve(action);
             });
           });
@@ -30,16 +28,20 @@ function registerAction(action, recipient) {
   });
 };
 
-function identifyUser() {
+function identifyUser(image) {
   return new Promise(function(resolve) {
+    User.find().then(function(users) {
+      var user = users[0];
 
-    return resolve();
+      sails.log('USER: ', user);
+      return resolve(user);
+    });
   });
 };
 
 function extractTags(description){
   var tagsRegex = /\S*#(?:\[[^\]]+\]|\S+)/ig;
-  return description.match(tagsRegex);
+  return description ? description.match(tagsRegex) : '';
 };
 
 module.exports = {

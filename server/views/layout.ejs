@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="/styles/font-awesome.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <link rel="stylesheet" href="/styles/ionicons.css">
+    <link rel="stylesheet" href="/styles/prifle-actions.css">
+    <link rel="stylesheet" href="/styles/profile-card.css">
     <link rel="stylesheet" href="/styles/style.css">
     <!--STYLES END-->
   </head>
@@ -54,7 +56,7 @@
                | <a class="aheader" href="/user/<%= req.session.user.id %>"><%= req.session.name %><a href="/logout" class="exit">X</a>
             <% } %>
             <% if (req.session.partner) { %>
-               | <a class="aheader" href="/user/<%= req.session.partner.id %>"><%= req.session.name %><a href="/logout" class="exit">X</a>
+               | <a class="aheader" href="/partner/<%= req.session.partner.id %>"><%= req.session.name %><a href="/logout" class="exit">X</a>
             <% } %>
           </h2>
         </div>

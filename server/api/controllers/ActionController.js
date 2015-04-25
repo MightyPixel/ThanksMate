@@ -25,7 +25,7 @@ function thanks(req, res) {
 
     UserActionService.registerAction(action, user).then(function(action) {
       req.flash('success', 'Your thank you was recieved!');
-      return res.view('thanks');
+      return res.redirect('/user/' + action.agent);
     });
   });
 };
