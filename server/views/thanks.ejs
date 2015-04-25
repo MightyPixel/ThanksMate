@@ -9,15 +9,13 @@
     method="POST">
     <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
     <label>Why are you grateful?*</label><br>
-    <select name="category" class="form-control">
-      <option>Helped me learn something new</option>
-      <option>Helped me achive something</option>
-      <option>Made my day better</option>
-      <option>Gave me an advice</option>
-    </select>
-
-    <label>In more details (optional): </label><br>
-    <input name="description" type="text" class="form-control" placeholder="More details... (optional)"></input>
+    <input name="description" type="text" id="description" class="form-control" placeholder="Details... "></input>
+    <div>
+      <a href="#" class="tag">#learnsomething</a>
+      <a href="#" class="tag">#achivesomething</a>
+      <a href="#" class="tag">#mademyday</a>
+      <a href="#" class="tag">#advice</a>
+    </div>
     <hr>
     <div class="form-controll bg-success"><%- req.flash('success') %></div>
     <input type="submit" class="btn btn-success" value="Thank you!"></input>

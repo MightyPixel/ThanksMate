@@ -22,7 +22,7 @@ function registerAction(action, recipient) {
           img.save(preprocImg);
 
           identifyUser(preprocImg).then(function(actor) {
-            Action.create({ photo: preprocImg.fd, agent: action.id }).then(function(action) {
+            Action.create({ photo: preprocImg.fd, agent: action.id, description: action.description, tags: extractTags(action.description)}).then(function(action) {
               return resolve(action);
             });
           });
@@ -34,9 +34,14 @@ function registerAction(action, recipient) {
 
 function identifyUser() {
   return new Promise(function(resolve) {
-    
+
     return resolve();
   });
+};
+
+function extractTags(description){
+  var tagsRegex = /\S*#(?:\[[^\]]+\]|\S+)/ig;
+  return description.match(tagsRegex);
 };
 
 module.exports = {

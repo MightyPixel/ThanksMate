@@ -10,16 +10,19 @@ module.exports = {
   attributes: {
 
     agent: {
-      model: 'user',
+      model: 'user'
     },
     recipient: {
-      model: 'user',
+      model: 'user'
     },
     description : {
       type: 'string'
     },
     category: {
       type: 'string', enum: ['LEARN', 'SMILE', 'SUPPORT'] // TODO: Add all cats
+    },
+    tags: {
+      type: 'array'
     }
 
   }
