@@ -8,7 +8,7 @@
             'Thank you' is the best prayer that anyone could say. I say that one a lot. Thank you expresses extreme gratitude, humility, understanding.
           </h4>
           <a href="#about" class="btn btn-custom btn-two" >Thank someone now!</a>
-          <a href="#clients" class="btn btn-custom btn-one" >Learn more...</a>
+          <a href="#clients" class="btn btn-custom btn-one" >Become a partner</a>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         Aliquam tempus ante placerat, consectetur tellus nec, porttitor nulla.
         Maecenas a quam erat. Praesent vehicula ut magna sit amet ultrices.
 
-        <h4 class="row text-center"><a href="/thanks">Say 'thank you' to someone now!</a></h4>
+        <h3 class="row text-center"><a href="/thanks">Say 'thank you' to someone now!</a></h3>
         <hr>
         </p>
         <div class="row text-center">
@@ -149,14 +149,15 @@
           <i class="ion-chatboxes"></i>
         </div>
         <h4>Become a Partner</h4>
-        Support the cause by becoming a partner of <a href="/apply">10x</a> simply by clicking <a href="/">here</a>. Basicly the rules are: we give you a way to recognise good people and you give them a warm thank you! You decide how to express it!
+        Support the cause by becoming a partner of <a href="/">10x</a> simply by clicking <a href="/apply">here</a>. Basicly the rules are: we give you a way to recognise good people and you give them a warm thank you! You decide how to express it!
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 scroll-me">
-        <h2 class="head-line">Learn more</h2>
+        <h2 class="head-line">Our Concept</h2>
         <p>
           <a href="/">10x Mate</a> is a simple platform that enables people to express how greatfull they are to others. Every registered user is able to
           give a 10x to someone - even if he is not registered! The next time one of our partners see the thanked person he will recive a gift with a note from you!
         </p>
+        <a href="/apply" class="btn btn-custom btn-one" >Apply for partnership</a>
         <a href="#header" class="btn btn-custom btn-three" >Back to the top</a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -167,7 +168,15 @@
         If you have any suggestions or feedback we are really eager to read it! To contact us click <a>here</a>.
 
       </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 scroll-me">
+        <h2 class="head-line">Our Partners:</h2>
+      </div>
 
+      <% _.each(partners, function(partner) { %>
+      <span><a href="/partner/<%= partner.id %>"><%= partner.name %></a></span>
+      <% }); %>
     </div>
   </div>
 
@@ -178,7 +187,7 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <form action="subscribe.php" method="post" id="postcontent"> 
+        <form action="/subscribe" method="post" id="postcontent"> 
           <h2>You want to keep in touch?</h2>
           <input type="email" name="email" class="form-control" placeholder="keep.me.in.touch@please.com" required />
           <button type="submit" class="btn btn-subscribe"  >Send!</button>

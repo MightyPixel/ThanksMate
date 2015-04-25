@@ -25,11 +25,9 @@ function thanks(req, res) {
       description: description
     };
 
-    UserActionService.registerAction(action, user).then(function(photo) {
-      Action.create({ photo: photo.fd, agent: user.id }).then(function(thank) {
-        req.flash('success', 'Your thank you was recieved!');
-        return res.view('thanks');
-      });
+    UserActionService.registerAction(action, user).then(function(action) {
+      req.flash('success', 'Your thank you was recieved!');
+      return res.view('thanks');
     });
   });
 };

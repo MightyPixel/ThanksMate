@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
@@ -12,7 +10,7 @@
         <![endif]-->
      <!-- Favicon Icon -->
     <link rel="icon" href="images/favicon.ico" />
-    <title>Wonder Landing Page</title>
+    <title>Thanks Mate!</title>
 
     <!--  
         Stylesheets and Preprocessors
@@ -51,6 +49,7 @@
     <div class="container" >
       <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 logo-wrapper">
+          <h2 style="margin: 0px;"><a href="/" style="text-decoration: none; color: white;">10x Mate | </a><%= name || '' %><% if (req.session.authenticated) { %><a href="/logout" style="position: relative;bottom: 1ex;font-size: 60%;margin: 2px;">X</a><% } %></h2>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" >
           <div class="menu-links scroll-me">

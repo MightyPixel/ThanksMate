@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  '/': 'FlatPageController.home',
   '/thanks': 'ActionController.thanks',
   // --
   'get /login': { view: 'auth/login'},

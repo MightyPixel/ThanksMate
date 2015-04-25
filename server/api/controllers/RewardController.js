@@ -6,7 +6,7 @@
  */
 
 function view(req, res) {
-  Reward.findOne(req.param('rewardId')).then(function(reward) {
+  Reward.findOne(req.param('rewardId')).populate('provider').then(function(reward) {
     return res.view('reward', {
       reward: reward,
     });

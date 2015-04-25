@@ -6,7 +6,7 @@
 
   <div>
     <% _.each(partner.rewards, function(reward) { %>
-      <span class="reward-item"><%= reward.name %><span>
+      <span class="reward-item"><a href="/reward/<%= reward.id %>"><%= reward.name %></a><span>
     <% }); %>
   </div>
 
