@@ -14,7 +14,9 @@ function login(req, res) {
   User.findOne(userObj).then(function(user) {
     if (user) {
       req.session.authenticated = true;
-      req.session.username = user.username;
+      req.session.user = user;
+      req.session.name = user.username; // TODO: Real name
+
       return res.redirect('/thanks');
     } else {
       return res.redirect('/login');
@@ -33,6 +35,8 @@ function partnerLogin(req, res) {
     if (partner) {
       req.session.authenticated = true;
       req.session.partnerId = partner.id;
+      req.session.partner = partner;
+      req.session.name = partner.name;
 
       return res.redirect('/partner/' + partner.id);
     } else {
@@ -45,6 +49,10 @@ function partnerLogin(req, res) {
 function logout(req, res) {
   req.session.authenticated = false;
   req.session.username = null;
+  req.session.partner = null;
+  req.session.user = null;
+  req.session.name = '';
+
   return res.redirect('/');
 };
 
@@ -57,6 +65,9 @@ function register(req, res) {
   User.create(userObj).then(function(user) {
     req.session.authenticated = true;
     req.session.username = user.username;
+    req.session.user = user;
+    req.session.name = user.username;
+
     return res.redirect('/thanks');
   });
 };

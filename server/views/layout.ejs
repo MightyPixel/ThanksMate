@@ -49,7 +49,14 @@
     <div class="container" >
       <div class="row"  >
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 logo-wrapper">
-          <h2 style="margin: 0px;"><a href="/" style="text-decoration: none; color: white;">10x Mate | </a><%= name || '' %><% if (req.session.authenticated) { %><a href="/logout" style="position: relative;bottom: 1ex;font-size: 60%;margin: 2px;">X</a><% } %></h2>
+          <h2 style="margin: 0px;"><a class="aheader" href="/">10x Mate</a>
+            <% if (req.session.user) { %>
+               | <a class="aheader" href="/user/<%= req.session.user.id %>"><%= req.session.name %><a href="/logout" class="exit">X</a>
+            <% } %>
+            <% if (req.session.partner) { %>
+               | <a class="aheader" href="/user/<%= req.session.partner.id %>"><%= req.session.name %><a href="/logout" class="exit">X</a>
+            <% } %>
+          </h2>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" >
           <div class="menu-links scroll-me">
