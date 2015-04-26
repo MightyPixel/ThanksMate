@@ -31,8 +31,22 @@ function create(req, res) {
   });
 };
 
+function consume(req, res) {
+  Reward.findOne(req.param('rewardId')).populate('provider').then(function(reward) {
+    User.findOne(req.param('userId')).then(function(user){
+      if(user.karma >= reward.requiredKarma){
+        user.karma = user.karma - reward.requiredKarma;
+        User.update(user);
+        return res.ok();
+      }
+      return res.badRequest();
+    });
+  });
+};
+
 module.exports = {
   view: view,
   create: create,
+  consume: consume,
 };
 

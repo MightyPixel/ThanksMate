@@ -54,7 +54,12 @@ module.exports.routes = {
   // --
   'get /add-reward': { view: 'add-reward' },
   'get /reward/:rewardId': 'RewardController.view',
+  'get /consume/:rewardId/:userId': 'RewardController.consume',
+
   'post /reward': 'RewardController.create',
+
+  'get /graph': 'GraphController.view',
+  'get /graph/data': 'GraphController.graphData',
 
   /***************************************************************************
   *                                                                          *

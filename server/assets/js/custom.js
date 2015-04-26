@@ -17,7 +17,31 @@ $(document).ready(function () {
     /*====================================
           SUBSCRIPTION   SCRIPTS
     ======================================*/
+  ;
 
+  // create a network
+
+
+
+  $.get("/graph/data", function(data, status){
+    console.log(JSON.stringify(data));
+    var container = document.getElementById('visualization');
+    var graphData = data.gData;
+    var networkString = graphData.edges.map(function(entry) {
+      return entry.from + ' -> ' + entry.to;
+    }).join(';');
+
+    console.log(networkString);
+
+    var data = {
+      dot: 'dinetwork {node[shape=circle]; ' + networkString + '  }'
+    };
+    var options = {
+      width: '900px',
+      height: '500px'
+    };
+    var network = new vis.Network(container, data, options);
+  });
 
    $("#postcontent").submit(function (e) {
         e.preventDefault();

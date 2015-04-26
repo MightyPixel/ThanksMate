@@ -60,6 +60,7 @@ function register(req, res) {
   var userObj = {
     username: req.param('username'),
     password: req.param('password'),
+    karma: 0,
   };
 
   User.create(userObj).then(function(user) {
