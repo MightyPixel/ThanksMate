@@ -32,6 +32,11 @@ $(document).ready(function () {
     }).join(';');
 
     console.log(networkString);
+    var katzView = "";
+    $.each( data.katzCentrality, function( key, value ) {
+      katzView = katzView + "<tr><td>Node " + key + "</td><td>Rank: " + value + "</td></tr>";
+    });
+    $('#katzCentrality').html(katzView);
 
     var data = {
       dot: 'dinetwork {node[shape=circle]; ' + networkString + '  }'
@@ -41,8 +46,6 @@ $(document).ready(function () {
       height: '500px'
     };
     var network = new vis.Network(container, data, options);
-
-    $('#katzCentrality').text(data.katzCentrality);
   });
 
    $("#postcontent").submit(function (e) {
