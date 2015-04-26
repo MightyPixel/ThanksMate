@@ -41,7 +41,7 @@ module.exports.routes = {
   'get /register': { view: 'auth/register' },
   'post /register': 'AuthController.register',
 
-  'get /partner-login': { view: 'partner-login' },
+  'get /partner-login': { view: 'auth/partner-login' },
   'post /partner-login': 'AuthController.partnerLogin',
 
   'get /apply': { view: 'apply' },

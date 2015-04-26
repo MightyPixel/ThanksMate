@@ -414,3 +414,8 @@ ul.img-list li:hover span.text-content {
   opacity: 1;
   font-size: 20px;
 }
+
+video { 
+   position:absolute;
+   visibility:hidden;
+}

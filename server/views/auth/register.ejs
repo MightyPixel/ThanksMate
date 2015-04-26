@@ -2,11 +2,17 @@
 
   <h1>Register</h1>
 
-  <form action="/register" method="post">
+  <form action="/register"
+    id="uploadForm"
+    enctype="multipart/form-data"
+    method="post">
+
     <label>Username</label><br>
     <input type="text" name="username" class="form-control" placeholder="username"></input>
     <label>Password</label><br>
     <input type="password" name="password" class="form-control" placeholder="password"></input>
+    <label>Photo</label><br>
+    <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
 
     <hr>
     <input type="submit" class="btn btn-success" value="Register"></input>

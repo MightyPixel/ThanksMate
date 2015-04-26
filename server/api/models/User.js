@@ -15,6 +15,9 @@ module.exports = {
     phone: {
       type: 'string'
     },
+    photo: {
+      type: 'string'
+    },
     karma : {
       type: 'integer'
     },

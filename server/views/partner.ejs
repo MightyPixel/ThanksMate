@@ -11,4 +11,13 @@
       <%- partial ('partials/grid.ejs', { items: partner.rewards, header: 'Rewards', section: 'reward' }) %>
     </div>
   </div>
+
+
+  <% if (req.session.partner) { %>
+    <h1>Live View</h1>
+    <button id='play'>Start Scan</button>
+    <br>
+    <video id='v'></video>
+    <canvas id='c'></canvas>
+  <% } %>
 </div>

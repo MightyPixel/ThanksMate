@@ -7,10 +7,12 @@
 
 function view(req, res) {
   Partner.findOne(req.param('partnerId')).populate('rewards').then(function(partner) {
-    var fd = partner.photo.split('/');
-    var filename = fd[fd.length - 1];
+    if (partner.photo) {
+      var fd = partner.photo.split('/');
+      var filename = fd[fd.length - 1];
 
-    partner.photo = filename;
+      partner.photo = filename;
+    }
 
     return res.view('partner', {
       partner: partner,

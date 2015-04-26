@@ -57,19 +57,27 @@ function logout(req, res) {
 };
 
 function register(req, res) {
-  var userObj = {
-    username: req.param('username'),
-    password: req.param('password'),
-    karma: 0,
-  };
+  UtilService.uploadFile(req.file('uploadFile')).then(function(file) {
+    var fd = file.fd.split('/');
+    var filename = fd[fd.length - 1];
 
-  User.create(userObj).then(function(user) {
-    req.session.authenticated = true;
-    req.session.username = user.username;
-    req.session.user = user;
-    req.session.name = user.username;
+    var userObj = {
+      username: req.param('username'),
+      password: req.param('password'),
+      photo: filename,
+	  karma: 0,
+    };
 
-    return res.redirect('/thanks');
+    User.create(userObj).then(function(user) {
+      UserActionService.registerActor(file);
+
+      req.session.authenticated = true;
+      req.session.username = user.username;
+      req.session.user = user;
+      req.session.name = user.username;
+
+      return res.redirect('/thanks');
+    });
   });
 };
 

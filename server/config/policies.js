@@ -31,4 +31,8 @@ module.exports.policies = {
   ActionController: {
     '*': 'sessionAuth',
   },
+
+  FlatPageController: {
+    'home': 'userAuth',
+  },
 };

@@ -5,7 +5,7 @@
   line-height: 16px;
   position: relative;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .profile-card .profile-card-background{
@@ -40,9 +40,10 @@
 }
 .profile-card .profile-card-content .profile-card-user-fields {
   position: absolute;
-  top: 103px;
+  /*top: 103px;*/
   left: 90px;
   width: 185px;
+  margin-top: -35px;
 }
 
 .profile-card .profile-card-content .profile-card-user-fields .profile-card-name{
