@@ -3,8 +3,40 @@
  */
 
 
-function buildGraph(actions){
-  //TODO: build graph from user interactions
+function buildGraph(actions, users){
+  //console.log(JSON.stringify(actions, null, 4));
+  var nodeIndex = 0;
+
+  var nodes = [];
+
+  _.each(users, function(user) {
+    nodes.push({id: nodeIndex, label: 'Node' + nodeIndex, userId: user.id})
+    nodeIndex++;
+  });
+  sails.log(nodes);
+
+  var nodeIndexed = _.indexBy(nodes, 'userId');
+  sails.log(nodeIndexed);
+
+  var edges = [];
+
+  _.each(actions, function(action) {
+    if(nodeIndexed[action.agent] && nodeIndexed[action.recipient])
+      edges.push({from: nodeIndexed[action.agent].id, to: nodeIndexed[action.recipient].id})
+  });
+
+  sails.log(edges);
+
+  var graph = {
+    nodes: nodes,
+    edges: edges,
+    index: nodeIndexed
+  };
+
+  return graph;
+}
+
+function buildGraphMock(){
   var nodes = [
     {id: 0, label: 'Node 1', userId: "434lj443lkjlk43hk4331"},
     {id: 1, label: 'Node 2', userId: "434ljlkjlk4343fek4342"},
@@ -24,7 +56,7 @@ function buildGraph(actions){
     {from: 4, to: 0},
 
     {from: 4, to: 3},
-    {from: 5, to: 0},
+    {from: 5, to: 3},
 
     {from: 4, to: 2}
 
@@ -106,8 +138,6 @@ function katzCentrality(graph){
   }
 
   var normalisedCentrality = normalised(centrality);
-  console.log(JSON.stringify(normalisedCentrality, null, 4));
-
   return normalisedCentrality;
 }
 
@@ -134,5 +164,6 @@ function sum(principalEigenvector) {
 
 module.exports = {
   buildGraph: buildGraph,
+  buildGraphMock: buildGraphMock,
   katzCentrality: katzCentrality,
 };

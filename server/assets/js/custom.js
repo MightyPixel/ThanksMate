@@ -41,6 +41,8 @@ $(document).ready(function () {
       height: '500px'
     };
     var network = new vis.Network(container, data, options);
+
+    $('#katzCentrality').text(data.katzCentrality);
   });
 
    $("#postcontent").submit(function (e) {
