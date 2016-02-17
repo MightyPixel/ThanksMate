@@ -9,7 +9,7 @@
     method="POST">
     <input type="file" class="form-control" name="uploadFile" accept="image/*" capture />
     <label>Why are you grateful?*</label><br>
-    <input name="description" type="text" id="description" class="form-control" placeholder="Details... "></input>
+    <input name="desc" id="description" type="text" class="form-control" placeholder="Details... "></input>
     <div>
       <a href="#" class="tag">#learnsomething</a>
       <a href="#" class="tag">#achivesomething</a>
@@ -17,7 +17,7 @@
       <a href="#" class="tag">#advice</a>
     </div>
     <hr>
-    <div class="form-controll bg-success"><%- req.flash('success') %></div>
+    <!--<div class="form-controll bg-success"><%- req.flash('success') %></div>-->
     <input type="submit" class="btn btn-success" value="Thank you!"></input>
   </form>
 </div>

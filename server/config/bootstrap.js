@@ -14,6 +14,7 @@ var predir = './assets/images/pre/';
 var usersdir = './assets/images/users/';
 
 Promise = require('bluebird');
+moment = require('moment');
 cv = opencv = require('opencv');
 fr = opencv.FaceRecognizer.createLBPHFaceRecognizer();
 trainSet = [];
@@ -58,9 +59,15 @@ function train(userPhotos) {
         });
       });
 
+      
+    });
+
+    new Promise(function(resolve) {
       setTimeout(function(){
-        console.log('Training with: ' + photo);
-      },1000);
+        console.log('Training with: ' + trainSet);
+        fr.trainSync(trainSet);
+        resolve();
+      }, 1000);
     });
 
     return resolve();
@@ -69,17 +76,11 @@ function train(userPhotos) {
 
 
 module.exports.bootstrap = function(cb) {
-  //fr.trainSync([[0, img], [1, img1], [2, img2]]);
-
-  var lower_threshold = [46, 57, 83];
-  var upper_threshold = [80, 96, 115];
-
   train({
     '0': 'ogy.jpg',
     '1': 'ivan.jpg',
     '2': 'user.jpg',
-  }).then(cb);
+  });
 
-  //var whoisit = fr.predictSync(img4);
-  // console.log("Identified image", whoisit);
+  cb();
 };

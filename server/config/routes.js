@@ -61,6 +61,8 @@ module.exports.routes = {
   'get /graph': 'GraphController.view',
   'get /graph/data': 'GraphController.graphData',
 
+  'get /generate-mock-data': 'GraphController.generateMockData',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

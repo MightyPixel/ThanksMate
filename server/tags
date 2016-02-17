@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+apply	api/controllers/PartnerController.js	/^function apply(req, res) {$/;"	f
+badRequest	api/responses/badRequest.js	/^module.exports = function badRequest(data, options) {$/;"	f
+buildGraph	api/services/GraphEngingService.js	/^function buildGraph(actions, users){$/;"	f
+buildGraph.graph.edges	api/services/GraphEngingService.js	/^    edges: edges,$/;"	p
+buildGraph.graph.index	api/services/GraphEngingService.js	/^    index: nodeIndexed$/;"	p
+buildGraph.graph.nodes	api/services/GraphEngingService.js	/^    nodes: nodes,$/;"	p
+buildGraphMock	api/services/GraphEngingService.js	/^function buildGraphMock(){$/;"	f
+consume	api/controllers/RewardController.js	/^function consume(req, res) {$/;"	f
+create	api/controllers/RewardController.js	/^function create(req, res) {$/;"	f
+dirname	api/services/UtilService.js	/^var dirname = '..\/..\/assets\/images\/upload';$/;"	v
+extractTags	api/services/UserActionService.js	/^function extractTags(description){$/;"	f
+forbidden	api/responses/forbidden.js	/^module.exports = function forbidden (data, options) {$/;"	f
+generateActions	api/controllers/GraphController.js	/^function generateActions(users){$/;"	f
+generateMockData	api/controllers/GraphController.js	/^function generateMockData(req, res) {$/;"	f
+generateUsers	api/controllers/GraphController.js	/^function generateUsers(){$/;"	f
+graph.edges	api/services/GraphEngingService.js	/^    edges: edges$/;"	p
+graph.nodes	api/services/GraphEngingService.js	/^    nodes: nodes,$/;"	p
+graphData	api/controllers/GraphController.js	/^function graphData(req, res){$/;"	f
+home	api/controllers/FlatPageController.js	/^function home(req, res) {$/;"	f
+identifyUser	api/services/UserActionService.js	/^function identifyUser(image) {$/;"	f
+katzCentrality	api/services/GraphEngingService.js	/^function katzCentrality(graph){$/;"	f
+login	api/controllers/AuthController.js	/^function login(req, res) {$/;"	f
+login.userObj.username	api/controllers/AuthController.js	/^    username: req.param('username'),$/;"	p
+logout	api/controllers/AuthController.js	/^function logout(req, res) {$/;"	f
+module.exports	api/policies/sessionAuth.js	/^module.exports = function(req, res, next) {$/;"	f
+module.exports	api/policies/userAuth.js	/^module.exports = function(req, res, next) {$/;"	f
+module.exports	api/responses/badRequest.js	/^module.exports = function badRequest(data, options) {$/;"	f
+module.exports	api/responses/forbidden.js	/^module.exports = function forbidden (data, options) {$/;"	f
+module.exports	api/responses/notFound.js	/^module.exports = function notFound (data, options) {$/;"	f
+module.exports	api/responses/ok.js	/^module.exports = function sendOK (data, options) {$/;"	f
+module.exports	api/responses/serverError.js	/^module.exports = function serverError (data, options) {$/;"	f
+module.exports.apply	api/controllers/PartnerController.js	/^  apply: apply,$/;"	p
+module.exports.attributes	api/models/Action.js	/^  attributes: {$/;"	p
+module.exports.attributes	api/models/Partner.js	/^  attributes: {$/;"	p
+module.exports.attributes	api/models/Reward.js	/^  attributes: {$/;"	p
+module.exports.attributes	api/models/User.js	/^  attributes: {$/;"	p
+module.exports.buildGraph	api/services/GraphEngingService.js	/^  buildGraph: buildGraph,$/;"	p
+module.exports.buildGraphMock	api/services/GraphEngingService.js	/^  buildGraphMock: buildGraphMock,$/;"	p
+module.exports.consume	api/controllers/RewardController.js	/^  consume: consume,$/;"	p
+module.exports.create	api/controllers/RewardController.js	/^  create: create,$/;"	p
+module.exports.generateMockData	api/controllers/GraphController.js	/^  generateMockData: generateMockData,$/;"	p
+module.exports.graphData	api/controllers/GraphController.js	/^  graphData: graphData,$/;"	p
+module.exports.home	api/controllers/FlatPageController.js	/^  home: home,$/;"	p
+module.exports.identifyUser	api/services/UserActionService.js	/^  identifyUser: identifyUser,$/;"	p
+module.exports.katzCentrality	api/services/GraphEngingService.js	/^  katzCentrality: katzCentrality,$/;"	p
+module.exports.login	api/controllers/AuthController.js	/^  login: login,$/;"	p
+module.exports.logout	api/controllers/AuthController.js	/^  logout: logout,$/;"	p
+module.exports.partnerLogin	api/controllers/AuthController.js	/^  partnerLogin: partnerLogin,$/;"	p
+module.exports.register	api/controllers/AuthController.js	/^  register: register,$/;"	p
+module.exports.registerAction	api/services/UserActionService.js	/^  registerAction: registerAction,$/;"	p
+module.exports.registerActor	api/services/UserActionService.js	/^  registerActor: registerActor,$/;"	p
+module.exports.thanks	api/controllers/ActionController.js	/^  thanks: thanks,$/;"	p
+module.exports.uploadFile	api/services/UtilService.js	/^  uploadFile: uploadFile,$/;"	p
+module.exports.view	api/controllers/GraphController.js	/^  view: view,$/;"	p
+module.exports.view	api/controllers/PartnerController.js	/^  view: view,$/;"	p
+module.exports.view	api/controllers/RewardController.js	/^  view: view,$/;"	p
+module.exports.view	api/controllers/UserController.js	/^  view: view,$/;"	p
+normalised	api/services/GraphEngingService.js	/^function normalised(principalEigenvector) {$/;"	f
+notFound	api/responses/notFound.js	/^module.exports = function notFound (data, options) {$/;"	f
+opencv	api/services/UserActionService.js	/^var opencv = require('opencv');$/;"	v
+opencv	api/services/UtilService.js	/^var opencv = require('opencv');$/;"	v
+partnerLogin	api/controllers/AuthController.js	/^function partnerLogin(req, res) {$/;"	f
+partnerLogin.partnerObj.email	api/controllers/AuthController.js	/^    email: req.param('email'),$/;"	p
+preprocessImage	api/services/UserActionService.js	/^function preprocessImage(file) {$/;"	f
+register	api/controllers/AuthController.js	/^function register(req, res) {$/;"	f
+registerAction	api/services/UserActionService.js	/^function registerAction(action, recipient) {$/;"	f
+registerActor	api/services/UserActionService.js	/^function registerActor(image) {$/;"	f
+sendOK	api/responses/ok.js	/^module.exports = function sendOK (data, options) {$/;"	f
+serverError	api/responses/serverError.js	/^module.exports = function serverError (data, options) {$/;"	f
+sum	api/services/GraphEngingService.js	/^function sum(principalEigenvector) {$/;"	f
+thanks	api/controllers/ActionController.js	/^function thanks(req, res) {$/;"	f
+uploadFile	api/services/UtilService.js	/^function uploadFile(file) {$/;"	f
+view	api/controllers/GraphController.js	/^function view(req, res) {$/;"	f
+view	api/controllers/PartnerController.js	/^function view(req, res) {$/;"	f
+view	api/controllers/RewardController.js	/^function view(req, res) {$/;"	f
+view	api/controllers/UserController.js	/^function view(req, res) {$/;"	f

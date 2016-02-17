@@ -8,16 +8,14 @@
   position: relative;
   margin-left: 0;
   list-style: none;
-  border-radius: 5px;
-  width: 46%;
+  /*width: 46%;*/
   /*float: left;*/
   /*display: block;*/
 }
 .profile-actions-container-right{
   position: relative;
   list-style: none;
-  border-radius: 5px;
-  width: 46%;
+  /*width: 46%;*/
   /*float: right;*/
   /*display: inline;*/
 }

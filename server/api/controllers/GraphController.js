@@ -9,8 +9,16 @@ function view(req, res) {
   return res.view('graph');
 };
 
+function generateMockData(req, res) {
+  generateUsers().then(function(users) {
+    generateActions(users).then(function(actions) {
+      return res.ok({ users: users, actions: actions });
+    });
+  });
+};
+
 function graphData(req, res){
-  User.find().then(function(users){
+  User.find({ active: true }).then(function(users){
     Action.find().then(function(actions){
       var graphData = GraphEngingService.buildGraph(actions, users);
       var katzCentrality = GraphEngingService.katzCentrality(graphData);
@@ -19,43 +27,45 @@ function graphData(req, res){
   });
 }
 
-function generateUser(){
-  var users = [];
-  for(var i=0; i < 5; i++){
-    var userObj = {
-      username: 'user'+i,
-      password: 'user'+i,
-      karma: 200,
-    };
-    users.push(userObj);
-  }
+function generateUsers(){
+  return new Promise(function(resolve) {
+    var users = [];
+    for(var i=0; i < 6; i++){
+      var userObj = {
+        username: 'user'+i,
+         password: 'user'+i,
+         karma: 200,
+      };
+      users.push(userObj);
+    }
 
-  User.create(users).then();
-
+    User.create(users).then(resolve);
+  });
 }
 
-function generateActions(){
-  var actions =[
-    {agent: "553cbe32b5758d4b25fc64c1", recipient:"553b524fb20676a213420ce1", description:"Action test description!"},
-    {agent: "553cbe32b5758d4b25fc64c2", recipient:"553b524fb20676a213420ce1", description:"Action test description!"},
+function generateActions(users){
+  return new Promise(function(resolve) {
+    var actions =[
+      {agent: users[0].id, recipient: users[1].id, description: 'Thanks ' +  users[1].id},
+      {agent: users[4].id, recipient: users[1].id, description: 'Thanks ' +  users[1].id},
+      {agent: users[2].id, recipient: users[1].id, description: 'Thanks ' +  users[1].id},
 
-    {agent: "553b524fb20676a213420ce1", recipient:"553bb5882374bae63f37165b", description:"Action test description!"},
-    {agent: "553cbe32b5758d4b25fc64c2", recipient:"553bb5882374bae63f37165b", description:"Action test description!"},
-    {agent: "553cbe32b5758d4b25fc64c0", recipient:"553bb5882374bae63f37165b", description:"Action test description!"},
+      {agent: users[3].id, recipient: users[0].id, description: 'Thanks ' +  users[0].id},
+      {agent: users[4].id, recipient: users[0].id, description: 'Thanks ' +  users[0].id},
 
-    {agent: "553cbe32b5758d4b25fc64c2", recipient:"553cbe32b5758d4b25fc64c1", description:"Action test description!"},
-    {agent: "553cbe32b5758d4b25fc64c3", recipient:"553cbe32b5758d4b25fc64c1", description:"Action test description!"},
+      {agent: users[4].id, recipient: users[3].id, description: 'Thanks ' +  users[3].id},
+      {agent: users[5].id, recipient: users[3].id, description: 'Thanks ' +  users[3].id},
 
-    {agent: "553cbe32b5758d4b25fc64c2", recipient:"553cbe32b5758d4b25fc64c0", description:"Action test description!"},
+      {agent: users[4].id, recipient: users[2].id, description: 'Thanks ' +  users[2].id},
+    ];
 
-    {agent: "553cbe32b5758d4b25fc64c1", recipient:"553cbe32b5758d4b25fc64c4", description:"Action test description!"}
-
-  ];
-  Action.create({agent: "553cbe32b5758d4b25fc64c1", recipient:"553cbe32b5758d4b25fc64c4", description:"Action test description!"}).then();
+    Action.create(actions).then(resolve);
+  });
 }
 
 module.exports = {
   view: view,
   graphData: graphData,
+  generateMockData: generateMockData,
 };
 

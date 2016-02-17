@@ -7,7 +7,6 @@
 
 function view(req, res) {
   User.findOne(req.param('userId')).populateAll().then(function(user) {
-    console.log(user);
     if(req.session.partner){
       Partner.findOne(req.session.partner.id).populate('rewards').then(function(partner){
         var userIds = [];
@@ -26,7 +25,7 @@ function view(req, res) {
           })
         });
       });
-    }else{
+    } else {
       var userIds = [];
       _.each(user.sentThanks, function(action) {
         userIds.push(action.agent);

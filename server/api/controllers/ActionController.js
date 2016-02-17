@@ -14,18 +14,23 @@ function thanks(req, res) {
 
   var uploadFile = req.file('uploadFile');
   var category = req.param('category');
-  var description = req.param('description');
+  var description = req.param('desc');
 
-  User.findOne({ username: req.session.username }).then(function(user) {
+  sails.log(description);
+
+  User.findOne({ username: req.session.user.username }).then(function(user) {
     var action = {
       file: uploadFile,
       category: category,
       description: description
     };
 
+    sails.log('desc: ', action.description, description);
+    UtilService.sayHello();
+
     UserActionService.registerAction(action, user).then(function(action) {
       req.flash('success', 'Your thank you was recieved!');
-      return res.redirect('/user/' + action.agent);
+      return res.redirect('/user/' + action.recipient);
     });
   });
 };

@@ -16,6 +16,11 @@ function uploadFile(file) {
   });
 };
 
+function sayHello() {
+  console.log('hello');
+}
+
 module.exports = {
   uploadFile: uploadFile,
+  sayHello: sayHello
 };

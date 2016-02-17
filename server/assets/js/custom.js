@@ -41,6 +41,7 @@ $(document).ready(function () {
     var data = {
       dot: 'dinetwork {node[shape=circle]; ' + networkString + '  }'
     };
+
     var options = {
       width: '900px',
       height: '500px'

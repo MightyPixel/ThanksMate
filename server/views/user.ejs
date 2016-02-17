@@ -3,11 +3,11 @@
         <!--<div class="profile-card-background"></div>-->
         <div class="profile-card-content">
             <a class="profile-card-avatar-link">
-                <img class="profile-card-avatar-image" src="/images/default-profile-picture.png"/>
+              <img class="profile-card-avatar-image" src="/images/<%= user.photo && ('upload/' + user.photo) || '/images/default-profile-picture.png'%>"/>
             </a>
 
             <div class="profile-card-user-fields">
-                <div class="profile-card-name"><a href="#">Ivan Nakov</a></div>
+              <div class="profile-card-name"><a href="#"><%= user.username %></a></div>
                 <span class="profile-card-username">
                     <a href="#">@<span class="profile-card-username-link"><%= user.username %></span></a>
                 </span>
@@ -22,13 +22,13 @@
                     </li>
                     <li>
                         <a class="profile-card-status-link" href="#">
-                            <span class="profile-card-status-label">Thanks</span>
+                            <span class="profile-card-status-label">10x Recived</span>
                             <span class="profile-card-status-value"><%= user.recievedThanks.length %></span>
                         </a>
                     </li>
                     <li>
                         <a class="profile-card-status-link" href="#">
-                            <span class="profile-card-status-label">Grateful</span>
+                            <span class="profile-card-status-label">10x Sent</span>
                             <span class="profile-card-status-value"><%= user.sentThanks.length %></span>
                         </a>
                     </li>
@@ -40,12 +40,12 @@
       <button class="consume-reward btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Consume Reward</button>
     <% } %>
     <div class="profile-actions">
-      <div class="profile-actions-background">
-        <div class="actions-header-left">Thanks</div>
-        <div class="actions-header-right">Grateful</div>
-      </div>
+      
       <div class="profile-actions-content row">
         <div class="profile-actions-container-left col-md-6">
+        <div class="profile-actions-background">
+          <div class="actions-header-left">Thanks Recieved</div>
+        </div>
           <div class="actions">
             <ol>
               <% _.each(user.recievedThanks, function (action) { %>
@@ -54,14 +54,15 @@
                   <div class="action-content">
                     <div class="action-header">
                       <a class="action-account-group">
-                        <img class="action-account-avatar" src="/images/default-profile-picture.png"/>
-                        <strong class="full-name"><% if(userIndex[action.agent]) userIndex[action.agent].username %></strong>
-                        <span class="username">@<%= user.username %></span>
+                        <img class="action-account-avatar" src="/images/<%= userIndex[action.agent] && userIndex[action.agent].photo && ('upload/' + userIndex[action.agent].photo) || 'default-profile-picture.png'%>"/>
+                        <strong class="full-name"><%= userIndex[action.agent] && userIndex[action.agent].username || 'Anonymous' %></strong>
+                        <br>
+                        <span class="username">@<%= userIndex[action.agent] && userIndex[action.agent].username || 'Anonymous' %></span>
                       </a>
                       <small class="time">
-                        <span>20m ago.</span>
+                        <span><%= moment(action.createdAt).fromNow() %></span>
                       </small>
-                      <p class="action-text"><%= action.description%></p>
+                      <p class="action-text"><%= action.description || 'Thanks!'%></p>
                     </div>
                   </div>
                 </div>
@@ -71,6 +72,9 @@
           </div>
         </div>
         <div class="profile-actions-container-right col-md-6">
+          <div class="profile-actions-background">
+            <div class="actions-header-left">Thanks Sent</div>
+          </div>
           <div class="actions">
             <ol>
               <% _.each(user.sentThanks, function (action) { %>
@@ -79,14 +83,16 @@
                   <div class="action-content">
                     <div class="action-header">
                       <a class="action-account-group">
-                        <img class="action-account-avatar" src="/images/default-profile-picture.png"/>
-                        <strong class="full-name"><% if(userIndex[action.recipient])userIndex[action.recipient].username %></strong>
-                        <span class="username">@<%= user.username %></span>
+                        <img class="action-account-avatar" src="/images/<%= userIndex[action.agent].photo && ('upload/' + userIndex[action.agent].photo) || '/images/default-profile-picture.png'%>"/>
+                        <strong class="full-name"><%= userIndex[action.agent].username %></strong>
+
+                        <br>
+                        <span class="username">@<%= userIndex[action.agent].username %></span>
                       </a>
                       <small class="time">
-                        <span>20m ago.</span>
+                        <span><%= moment(action.createdAt).fromNow() %></span>
                       </small>
-                      <p class="action-text"><%= action.description %></p>
+                      <p class="action-text"><%= action.description || 'Thanks!' %></p>
                     </div>
                   </div>
                 </div>

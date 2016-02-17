@@ -25,7 +25,8 @@ function registerAction(action, recipient) {
       preprocessImage(file).then(function(preprocImg) {
 
         identifyUser(preprocImg).then(function(actor) {
-          Action.create({ photo: preprocImg.fd, agent: actor.id, description: action.description, tags: extractTags(action.description)}).then(function(action) {
+          sails.log('in register proc: ', action.description);
+          Action.create({ photo: preprocImg.fd, recipient: actor.id, agent: recipient.id, description: action.description, tags: extractTags(action.description)}).then(function(action) {
             return resolve(action);
           });
         });
@@ -46,7 +47,6 @@ function registerActor(image) {
         }
 
         // TODO
-
         return resolve(null);
       });
     });
@@ -58,8 +58,12 @@ function identifyUser(image) {
 
   return new Promise(function(resolve) {
     opencv.readImage(image, function(err, img) {
+      var predict = fr.predictSync(img);
 
-      User.find().then(function(users) {
+      console.log(predict);
+
+
+      User.find({ active: true }).then(function(users) {
         var user = users[0];
 
         sails.log('USER: ', user);
